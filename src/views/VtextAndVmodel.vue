@@ -1,4 +1,6 @@
 <script>
+import forpinia from '../stores/forpinia'
+import {mapActions} from 'pinia'
 export default{
     data(){ // data:function ()
         return{
@@ -8,6 +10,12 @@ export default{
             modelCheck:[],
             modelSelect:"",
         }
+    },
+    methods:{
+        ...mapActions(forpinia, ["setPage"])
+    },
+    mounted(){
+        this.setPage(2)
     }
 }
 </script>
